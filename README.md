@@ -1,6 +1,10 @@
-# Laravel9環境
+# 目的役割
 
-Laravel9 のGitHubテンプレートリポジトリです。
+勤怠管理ができるwebアプリケーションです。
+
+## Laravel9環境
+
+Laravel9
 
 ## インストール
 
