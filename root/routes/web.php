@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view("/", "top.top");
+Route::view('/login', "login");
+Route::view("/manager","manager");
+Route::view("/users","users");
+Route::view("/try","try");
