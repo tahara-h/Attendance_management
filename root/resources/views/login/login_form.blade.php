@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <title>ログイン画面</title>
@@ -63,26 +63,31 @@
   </head>
   <body class="text-center">
 <main class="form-signin w-100 m-auto">
-  <form>
-    <div class="system_title">Web日報登録</div>
-    <h1 class="h3 mb-3 fw-normal">認証画面</h1>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+<!-- フォームには何かを指定する必要がある -->
+<form class="form-signin" method="POST" action="{{route('login')}}">
+  @csrf
+  <div class="system_title">Web日報登録</div>
+  <h1 class="h3 mb-3 fw-normal">認証画面</h1>
+<!-- 入力した内容が間違っている場合、エラーメッセージを表示 -->
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> 確認しました
-      </label>
-    </div>
+  @endif
+  <div class="form-floating">
+    <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+    <label for="floatingInput">Email address</label>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+    <label for="floatingPassword">Password</label>
+  </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">ログイン</button>
-  </form>
+</form>
 </main>
 
   </body>

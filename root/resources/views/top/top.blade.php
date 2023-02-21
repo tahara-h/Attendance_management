@@ -17,7 +17,7 @@
             @include("user_left_menu")
         </div>
         <div class=content_list>
-            @yield("left_menu")
+            @yield("user_content")
         </div>
     </main>
 </body>
