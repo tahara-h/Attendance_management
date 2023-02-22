@@ -19,6 +19,7 @@ Route::view("/try","try");
 // ログイン機能
 Route::get("/login", [AuthController::class,"showLogin"]) ->name("showLogin");
 Route::post("login",[AuthController::class,"login"]) ->name("login");
+//　ホーム画面
 Route::get("/",function(){
     return view("top.top");
 })->name("home");
