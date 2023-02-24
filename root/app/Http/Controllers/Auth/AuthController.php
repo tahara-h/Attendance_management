@@ -11,10 +11,12 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    //ログイン画面を表示する
     public function showLogin()
     {
         return view("login.login_form");
     }
+    //ログイン判定（未完成）
     public function login(LoginFormRequest $request)
     {
         $credentials = $request->only('email', 'password');

@@ -14,12 +14,12 @@ use App\Http\Controllers\Auth\AuthController;
 |
 */
 Route::view("/manager","manager");
-Route::view("/users","users");
+Route::view("/users","users.users");
 Route::view("/try","try");
 // ログイン機能
 Route::get("/login", [AuthController::class,"showLogin"]) ->name("showLogin");
 Route::post("login",[AuthController::class,"login"]) ->name("login");
 //　ホーム画面
 Route::get("/",function(){
-    return view("top.top");
+    return view("top.manager_top");
 })->name("home");

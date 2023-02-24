@@ -12,11 +12,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    //テーブルを指定
+    protected $table = "users";
+    //可変項目
     protected $fillable = [
         'name',
         'email',
