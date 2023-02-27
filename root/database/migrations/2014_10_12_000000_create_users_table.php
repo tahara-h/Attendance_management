@@ -15,8 +15,15 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
-            $table->string('email')->unique();
+            $table->string('last_name',100);
+            $table->string('first_name',100);
+            $table->string('last_name_kana',100);
+            $table->string('first_name_kana',100);
+            $table->integer('role_id',11);
+            // $table->integer('prefecture')->nulladle($value = true);
+            // $table->string('address1',255)->nulladle($value = true);
+            // $table->string('address2',255)->nulladle($value = true);
+            $table->string('email',255);
             $table->string('password');
             $table->tinyInteger("locked_flg")->default(0);
             $table->integer("error_count")->unsigned()->default(0);
@@ -31,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists("users");
     }
 };
